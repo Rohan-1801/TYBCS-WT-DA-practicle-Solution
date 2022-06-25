@@ -1,0 +1,1922 @@
+Q 1) Write a PHP script to change the preferences of your web page like font style, font size, font color, background color using cookie. Display selected setting on next web page and actual implementation (with new settings) on third page.
+
+
+
+<?xml version="1.0" encoding="utf-8"?/
+<ABCBOOK>
+<Technical>
+<BOOK>
+<Book_pubYear>ABC </Book_PubYear>
+<Book_Title>pqr </Book_Title>
+<Book_Author>400 </Book_Author>
+</BOOK>
+</Technical>
+<Cooking>
+<BOOK>
+<Book_pubYear>ABC </Book_PubYear>
+<Book_Title>pqr </Book_Title>
+<Book_Author>400 </Book_Author>
+</BOOK>
+</Cooking>
+<Yoga>
+<BOOK>
+<Book_pubYear>ABC </Book_PubYear>
+<Book_Title>pqr </Book_Title>
+<Book_Author>400 </Book_Author>
+</BOOK>
+</Yoga>
+</ABCBOOK>
+
+
+######################################
+<?php
+$xml=simplexml_load_file("Book.xml") or
+dile("cannot load");
+$xmlstring=$xml=>XML();
+echo $xmlstring;
+?>
+
+**************OUTPUT****************
+ ABC pqr 400 ABC pqr 400 ABC pqr 400 
+
+/*Create ‘sales’ Data set having 5 columns namely: ID, TV, Radio, Newspaper and Sales.(random
+500 entries) Build a linear regression model by identifying independent and target variable. Split the
+variables into training and testing sets. then divide the training and testing sets into a 7:3 ratio, respectively
+and print them. Build a simple linear regression model. */
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn import metrics
+from sklearn.metrics import r2_score
+import statsmodels.api as sm
+
+df = pd.read_csv(“Advertising.csv”)
+
+df.head()
+
+
+
+/* Build a simple linear regression model for Fish Species Weight Prediction. (download dataset
+https://www.kaggle.com/aungpyaeap/fish-market?select=Fish.csv ) */
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn import linear_model
+from sklearn.model_selection import train_test_split
+%%%%
+import pandas as pd
+df = pd.read_csv (r'/home/kkw/Documents/Fish.csv')
+print (df)
+%%%
+print('Shape of dataset= ', df.shape) # To get no of rows and columns
+%%%
+df.head(5) 
+
+*********************OUTPUT******************************
+Species  Weight  Length1  Length2  Length3  Height   Width
+0   Bream   242.0     23.2     25.4     30.0   11.52  4.0200
+1   Bream   290.0     24.0     26.3     31.2   12.48  4.3056
+
+Shape of dataset=  (2, 7)
+
+Species 	Weight 	Length1 	Length2 	Length3 	Height 	Width
+0 	Bream 	242.0 	23.2 	25.4 	30.0 	11.52 	4.0200
+1 	Bream 	290.0 	24.0 	26.3 	31.2 	12.48 	4.3056
+
+/* Write a PHP script to accept username and password. If in the first three chances,
+username and password entered is correct then display second form with “Welcome
+message” otherwise display error message. [Use Session] */ 
+
+
+
+<html>
+<head>
+<script>
+    function getans()
+{
+st1=document.getElementById('txtname').value;
+
+st2=document.getElementById('txtpass').value;
+                ob=new XMLHttpRequwst();
+
+ob.onreadystatechange=function()
+{
+   if(ob.readyState==4 && ob.status==200)  
+{
+if(ob.responseText==3)              
+{
+ alert("sorry you lost the chances to login");
+ location="error.html";
+ }
+  else
+   if(ob.responseText=="correct")
+ } 
+alert("you entered correct details");
+}
+else
+alert(ob.responseText);
+      }
+} 
+ob.open("GET","slip8_Q2.php? n="+st1+"&p="+st2);
+ob.send();
+       } 
+</script> 
+</head>
+<body>
+<input type=text id=txtname placeholder="username"></br>
+<input type=password id=txtpass placeholder="password"></br>
+<input type="button"onclick="getans()" value="Login"> 
+</body>
+</html>  
+
+*****error.html*******
+
+<html>
+<body>
+<h1>you lossed the chances of login</h1>
+</body>
+</html>
+
+<?php
+   session_start();
+   $nm=$_GET['n'];
+   $ps=$_GET['p'];
+   if($nm==$ps)
+ {
+   echo "correct";
+   }
+   else if(isset($_SESSION['cnt']))
+  {
+    $x=$_SESSION['cnt'];
+        $x=$x+1;
+   $_SESSION['cnt']=$x;
+    echo
+    $_SESSION['cnt'];
+   if($_SESSION['cnt']<=3)
+   $_SESSION['cnt']=1;
+}
+ else
+{
+ $_SESSION['cnt']=1;
+ echo"1";
+ }
+?>
+
+***************OUTPUT******************
+you lossed the chances of login
+
+
+/* Create ‘User’ Data set having 5 columns namely: User ID, Gender, Age, EstimatedSalary and
+Purchased. Build a logistic regression model that can predict whether on the given parameter a person will
+buy a car or not. */
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+
+import pandas as pd
+df=pd.read_csv('suv_data.csv')
+df.head()
+
+***************OUTPUT*****************
+user id 	gender 	age 	estimated salary 	purchased
+0 	15624510 	male 	19 	19000 	                  0
+1 	15810944 	male 	35 	20000 	                  0
+2 	15668575 	female 26 	43000 	                  0
+3 	15603246 	female 27 	57000 	                  0
+4 	15804002 	male 	19 	76000 	                  0
+
+/* Use the iris dataset. Write a Python program to view some basic statistical details like percentile,
+mean, std etc. of the species of 'Iris-setosa', 'Iris-versicolor' and 'Iris-virginica'. Apply logistic regression on
+the dataset to identify different species (setosa, versicolor, verginica) of Iris flowers given just 4 features:
+sepal and petal lengths and widths.. Find the accuracy of the model. */
+
+import pandas as pd
+data = pd.read_csv("iris.csv")
+print('Iris-setosa')
+setosa = data['Species'] == 'Iris-setosa'
+print(data[setosa].describe())
+print('\nIris-versicolor')
+setosa = data['Species'] == 'Iris-versicolor'
+print(data[setosa].describe())
+print('\nIris-virginica')
+setosa = data['Species'] == 'Iris-virginica'
+print(data[setosa].describe())
+*********************OUTPUT***********************
+Iris-setosa
+Id,SepalLengthCm,SepalWidthCm,PetalLengthCm,PetalWidthCm
+count,50.00000,50.00000,50.000000,50.000000,50.00000
+mean,25.50000,5.00600,3.418000,1.464000,0.24400
+std,14.57738,0.35249,0.381024,0.173511,0.10721
+min,1.00000,4.30000,2.300000,1.000000,0.10000
+25%,13.25000,4.80000,3.125000,1.400000,0.20000
+50%,25.50000,5.00000,3.400000,1.500000,0.20000
+75%,37.75000,5.20000,3.675000,1.575000,0.30000
+max,50.00000,5.80000,4.400000,1.900000,0.60000
+
+Iris-versicolor
+Id,SepalLengthCm,SepalWidthCm,PetalLengthCm,PetalWidthCm
+count,50.00000,50.000000,50.000000,50.000000,50.000000
+mean,75.50000,5.936000,2.770000,4.260000,1.326000
+std,14.577380,516171,0.313798,0.469911,0.197753
+min,51.00000,4.900000,2.000000,3.000000,1.000000
+25%,63.25000,5.600000,2.525000,4.000000,1.200000
+50%,75.50000,5.900000,2.800000,4.350000,1.300000
+75%,87.75000,6.300000,3.000000,4.600000,1.500000
+max,100.00000,7.000000,3.400000,5.100000,1.800000
+
+Iris-virginica
+Id,SepalLengthCm,SepalWidthCm,PetalLengthCm,PetalWidthCm
+count,50.00000,50.00000,50.000000,50.000000,50.00000
+mean,125.50000,6.58800,2.974000,5.552000,2.02600
+std,14.57738,0.63588,0.322497,0.551895,0.27465
+min,101.00000,4.90000,2.200000,4.500000,1.40000
+25%,113.25000,6.22500,2.800000,5.100000,1.80000
+50%,125.50000,6.50000,3.000000,5.550000,2.00000
+75%,137.75000,6.90000,3.175000,5.875000,2.30000
+max,150.00000,7.90000,3.800000,6.900000,2.50000
+
+
+/* Write a PHP script to accept Employee details (Eno, Ename, Address) on first page.
+On second page accept earning (Basic, DA, HRA). On third page print Employee
+information (Eno, Ename, Address, Basic, DA, HRA, Total) [ Use Session] */
+
+ 	
+Assign1-SETB=b
+employe.html
+
+<html>
+<body>
+ <form action="employe.php" method="get">
+ <center><h2>Enter Employe Details:</h2> <br>
+ 
+ <table>
+ <tr> <td><b>Emp no:</b></td>    <td><input type=text name=eno></td>   </tr>
+ <tr> <td><b> Name:</b></td>     <td><input type=text name=enm></td>   </tr>
+ <tr> <td><b> Address:</b></td>  <td><input type=text name=eadd></td>  </tr>
+</table>
+ <br> <input type=submit value=show name=submit>
+ </center>
+ </form>
+ </body>
+ </html>
+ 
+ **************OUTPUT*********************
+ Enter Employe Details:
+
+Emp no: 	
+Name: 	
+Address:
+
+*************output @next*
+Enter Earnings of Employee:
+Basic:	
+DA:	
+HRA:	
+	 	
+
+ 
+ 
+ *****employe.php**********
+ <?php
+session_start();
+$eno =$_GET['eno'];
+$enm =$_GET['enm'];
+$eadd =$_GET['eadd'];
+
+$_SESSION['eno'] = $eno;
+$_SESSION['enm'] = $enm;
+$_SESSION['eadd'] = $eadd;
+?>
+
+<html>
+<body>
+
+<form action="employe.php" method="post">
+<center>
+<h2>Enter Earnings of Employee:</h2>
+
+<table>
+<tr><td>Basic:</td><td><input type="text"name="e1"></td><tr>
+<tr><td>DA:</td><td><input type="text"name="e2"></td><tr>
+<tr><td>HRA:</td><td><input type="text"name="e3"></td><tr>
+<tr><td></td><td><input type="submit"value=Next></td></tr>
+</table>
+</center>
+</form>
+</body>
+</html>
+
+
+/* Create the following dataset in python
+Convert the categorical values into numeric format. Apply the apriori algorithm on the above
+dataset to generate the frequent itemsets and association rules. Repeat the process with different min_sup
+values. 2. Create your own transactions dataset and apply the above process on your dataset.
+ */ 
+
+
+import pandas as pd
+from mlxtend.frequent_patterns import apriori, association_rules
+
+Create the sample dataset
+transactions = [['eggs', 'milk','bread'],
+['eggs', 'apple'],
+['milk', 'bread'],
+['apple', 'milk'],
+['milk', 'apple', 'bread']]
+
+from mlxtend.preprocessing import TransactionEncoder
+te=TransactionEncoder()
+te_array=te.fit(transactions).transform(transactions)
+df=pd.DataFrame(te_array, columns=te.columns_)
+df
+
+**********************OUTPUT***********
+apple bread Eggs milk
+0 False True True True
+1 True False True False
+2 False True False True
+3 True False False True
+4 True True False True
+
+
+/* 
+Write a python code to implement the apriori algorithm. Test the code on any standard
+dataset. */
+
+import numpy as np
+import pandas as pd
+from mlxtend.frequent_patterns import apriori, association_rules
+
+
+cd C:\Users\Dev\Desktop\Kaggle\Apriori Algorithm
+
+
+data = pd.read_excel('Online_Retail.xlsx')
+data.head()
+***************OUTPUT**********************
+INVOICENO,STOCKCODE,DESCRIPTION QUANTITY,invoicedate,unitprice,customerid,country
+0,645676,white hanging heart tught holder,6,2010-12-01 8:26:00,255,178500,united kingdom
+1,645672,white hanging heart tught holder,2,2011-12-01 8:26:00,253,178500,united kingdom
+2,645671,white hanging heart tught holder,1,2012-12-01 8:26:00,252,178500,united kingdom
+3,645674,white hanging heart tught holder,3,2010-12-01 8:26:00,254,178500,united kingdom
+4,645673,white hanging heart tught holder,4,2012-12-01 8:26:00,251,178500,united kingdom
+
+/* Write a PHP script to generate an XML file in the following format in PHP.
+<?xml version="1.0" encoding="UTF-8"?>
+<BookInfo>
+<book>
+<bookno>1</bookno>
+<bookname>JAVA</bookname>
+<authorname> Balguru Swami</authorname>
+<price>250</price>
+<year>2006</year>
+</book>
+<book>
+<bookno>2</bookno>
+<bookname>C</bookname>
+<authorname> Denis Ritchie</authorname>
+<price>500</price>
+<year>1971</year>
+</book>
+</BookInfo> */ 
+
+
+
+
+<?xml version='1.0'encoding='UTF-8'?>
+<?xml-stylesheet type="text/css"?>
+
+<bookstore>
+        <books category="technical">
+                <book_no>1</book_no>
+                <book_name>def</book_name>
+                <author_name>xxx</author_name>
+                <price>100</price>
+                <year>1990</year>
+    </books>
+       <books category="Cooking">
+               <book_no>2</book_no>
+               <book_name>ccc</book_name>
+               <author_name>aaa</author_name>
+               <price>200</price>
+               <year>1950</year>
+    </books>
+      <books category="YOGA">
+               <book_no>3</book_no>
+               <book_name>ddd</book_name>
+               <author_name>aaa</author_name>
+               <price>100</price>
+               <year>2016</year>
+    </books>
+      <books category="technical">
+               <book_no>1</book_no>
+               <book_name>def</book_name>
+               <author_name>xxx</author_name>
+               <price>100</price>
+               <year>1990</year>
+    </books>
+</bookstore>
+
+<?php
+       $doc=new DOMDocument();
+       $doc->load("book.xml");
+       $name=$doc->getElementsByTagName("book_name:WT");
+       $year=$doc->getElementsByTagName("year:2022");
+
+       echo"Books Names:WT";
+       foreach($name as $val)
+       {
+               echo"<br>".$val->textContent;
+       }
+       echo"<br><br>Year:2022";
+       foreach($year as $value)
+       {
+              echo"<br>".$value->textContent;
+       }
+?>
+
+
+
+*************OUTPUT****************
+ 1 def xxx 100 1990 2 ccc aaa 200 1950 3 ddd aaa 100 2016 1 def xxx 100 1990 Books Names:WT
+
+Year:2022 
+
+
+/* Consider any text paragraph. Preprocess the text to remove any special characters and digits.
+Generate the summary using extractive summarization process. */ 
+
+
+
+import bs4 as bs
+import urllib.request
+import re
+
+scraped_data = urllib.request.urlopen('https://en.wikipedia.org/wiki/Artificial_intelligence')
+article = scraped_data.read()
+
+parsed_article = bs.BeautifulSoup(article,'lxml')
+
+paragraphs = parsed_article.find_all('p')
+
+article_text = ""
+
+for p in paragraphs:
+    article_text += p.text
+    
+###############################
+
+article_text = re.sub(r'\[[0-9]*\]', ' ', article_text)
+article_text = re.sub(r'\s+', ' ', article_text)
+
+#####################################
+formatted_article_text = re.sub('[^a-zA-Z]', ' ', article_text )
+formatted_article_text = re.sub(r'\s+', ' ', formatted_article_text)
+
+#############################
+sentence_list = nltk.sent_tokenize(article_text)
+
+####################
+stopwords = nltk.corpus.stopwords.words('english')
+
+word_frequencies = {}
+for word in nltk.word_tokenize(formatted_article_text):
+    if word not in stopwords:
+        if word not in word_frequencies.keys():
+            word_frequencies[word] = 1
+        else:
+            word_frequencies[word] += 1
+            
+########################################
+
+maximum_frequncy = max(word_frequencies.values())
+
+for word in word_frequencies.keys():
+    word_frequencies[word] = (word_frequencies[word]/maximum_frequncy)
+##############################################
+sentence_scores = {}
+for sent in sentence_list:
+    for word in nltk.word_tokenize(sent.lower()):
+        if word in word_frequencies.keys():
+            if len(sent.split(' ')) < 30:
+                if sent not in sentence_scores.keys():
+                    sentence_scores[sent] = word_frequencies[word]
+                else:
+                    sentence_scores[sent] += word_frequencies[word]
+#########################################################3
+import heapq
+summary_sentences = heapq.nlargest(7, sentence_scores, key=sentence_scores.get)
+
+summary = ' '.join(summary_sentences)
+print(summary)
+
+/* Create ‘User’ Data set having 5 columns namely: User ID, Gender, Age, EstimatedSalary and
+Purchased. Build a logistic regression model that can predict whether on the given parameter a person will
+buy a car or not */
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+
+import pandas as pd
+df=pd.read_csv('suv_data.csv')
+df.head()
+
+***************OUTPUT*****************
+user id 	gender 	age 	estimated salary 	purchased
+0 	15624510 	male 	19 	19000 	                  0
+1 	15810944 	male 	35 	20000 	                  0
+2 	15668575 	female 26 	43000 	                  0
+3 	15603246 	female 27 	57000 	                  0
+4 	15804002 	male 	19 	76000 	                  0
+
+
+/* Write a javascript to display message ‘Exams are near, have you started preparing
+for?’ using alert, prompt and confirm boxes. Accept proper input from user and display
+messages accordingly. */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<title>‘Exams are near, have you started preparing for?’</title>
+</head>
+<body>
+<h1 style="color: red">‘Exams are near, have you started preparing for?’</h1>
+<hr />
+<script type="text/javascript">
+alert("This is a alert box"); 
+</script>
+</body>
+</html>
+
+
+/* Consider any text paragraph. Preprocess the text to remove any special characters and digits.
+Generate the summary using extractive summarization process */ 
+
+
+
+
+import bs4 as bs
+import urllib.request
+import re
+
+scraped_data = urllib.request.urlopen('https://en.wikipedia.org/wiki/Artificial_intelligence')
+article = scraped_data.read()
+
+parsed_article = bs.BeautifulSoup(article,'lxml')
+
+paragraphs = parsed_article.find_all('p')
+
+article_text = ""
+
+for p in paragraphs:
+    article_text += p.text
+    
+###############################
+
+article_text = re.sub(r'\[[0-9]*\]', ' ', article_text)
+article_text = re.sub(r'\s+', ' ', article_text)
+
+#####################################
+formatted_article_text = re.sub('[^a-zA-Z]', ' ', article_text )
+formatted_article_text = re.sub(r'\s+', ' ', formatted_article_text)
+
+#############################
+sentence_list = nltk.sent_tokenize(article_text)
+
+####################
+stopwords = nltk.corpus.stopwords.words('english')
+
+word_frequencies = {}
+for word in nltk.word_tokenize(formatted_article_text):
+    if word not in stopwords:
+        if word not in word_frequencies.keys():
+            word_frequencies[word] = 1
+        else:
+            word_frequencies[word] += 1
+            
+########################################
+
+maximum_frequncy = max(word_frequencies.values())
+
+for word in word_frequencies.keys():
+    word_frequencies[word] = (word_frequencies[word]/maximum_frequncy)
+##############################################
+sentence_scores = {}
+for sent in sentence_list:
+    for word in nltk.word_tokenize(sent.lower()):
+        if word in word_frequencies.keys():
+            if len(sent.split(' ')) < 30:
+                if sent not in sentence_scores.keys():
+                    sentence_scores[sent] = word_frequencies[word]
+                else:
+                    sentence_scores[sent] += word_frequencies[word]
+#########################################################3
+import heapq
+summary_sentences = heapq.nlargest(7, sentence_scores, key=sentence_scores.get)
+
+summary = ' '.join(summary_sentences)
+print(summary)
+ 
+
+/* Build a simple linear regression model for Fish Species Weight Prediction. (download
+dataset https://www.kaggle.com/aungpyaeap/fish-market?select=Fish.csv ) */ 
+
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn import linear_model
+from sklearn.model_selection import train_test_split
+%%%%
+import pandas as pd
+df = pd.read_csv (r'/home/kkw/Documents/Fish.csv')
+print (df)
+%%%
+print('Shape of dataset= ', df.shape) # To get no of rows and columns
+%%%
+df.head(5) 
+
+*********************OUTPUT******************************
+Species  Weight  Length1  Length2  Length3  Height   Width
+0   Bream   242.0     23.2     25.4     30.0   11.52  4.0200
+1   Bream   290.0     24.0     26.3     31.2   12.48  4.3056
+
+Shape of dataset=  (2, 7)
+
+Species 	Weight 	Length1 	Length2 	Length3 	Height 	Width
+0 	Bream 	242.0 	23.2 	25.4 	30.0 	11.52 	4.0200
+1 	Bream 	290.0 	24.0 	26.3 	31.2 	12.48 	4.3056
+
+
+/* Write a Javascript program to accept name of student, change font color to red, font
+size to 18 if student name is present otherwise on clicking on empty text box display
+image which changes its size (Use on blur, on load, on mousehover, on mouseclick, on
+mouseup) */
+
+
+
+import bs4 as bs
+import urllib.request
+import re
+
+scraped_data = urllib.request.urlopen('https://en.wikipedia.org/wiki/Artificial_intelligence')
+article = scraped_data.read()
+
+parsed_article = bs.BeautifulSoup(article,'lxml')
+
+paragraphs = parsed_article.find_all('p')
+
+article_text = ""
+
+for p in paragraphs:
+    article_text += p.text
+    
+###############################
+
+article_text = re.sub(r'\[[0-9]*\]', ' ', article_text)
+article_text = re.sub(r'\s+', ' ', article_text)
+
+#####################################
+formatted_article_text = re.sub('[^a-zA-Z]', ' ', article_text )
+formatted_article_text = re.sub(r'\s+', ' ', formatted_article_text)
+
+#############################
+sentence_list = nltk.sent_tokenize(article_text)
+
+####################
+stopwords = nltk.corpus.stopwords.words('english')
+
+word_frequencies = {}
+for word in nltk.word_tokenize(formatted_article_text):
+    if word not in stopwords:
+        if word not in word_frequencies.keys():
+            word_frequencies[word] = 1
+        else:
+            word_frequencies[word] += 1
+            
+########################################
+
+maximum_frequncy = max(word_frequencies.values())
+
+for word in word_frequencies.keys():
+    word_frequencies[word] = (word_frequencies[word]/maximum_frequncy)
+##############################################
+sentence_scores = {}
+for sent in sentence_list:
+    for word in nltk.word_tokenize(sent.lower()):
+        if word in word_frequencies.keys():
+            if len(sent.split(' ')) < 30:
+                if sent not in sentence_scores.keys():
+                    sentence_scores[sent] = word_frequencies[word]
+                else:
+                    sentence_scores[sent] += word_frequencies[word]
+#########################################################3
+import heapq
+summary_sentences = heapq.nlargest(7, sentence_scores, key=sentence_scores.get)
+
+summary = ' '.join(summary_sentences)
+print(summary)
+
+/*Q2) Consider any text paragraph. Remove the stopwords. Tokenize the paragraph to extract words and
+sentences. Calculate the word frequency distribution and plot the frequencies. Plot the wordcloud of the text */
+
+
+
+import nltk
+s = input('Enter the file name which contains a sentence: ')
+file1 = open(s)
+sentence = file1.read()
+file1.close()
+p = input('Enter the file name which contains a paragraph: ')
+file2 = open(p)
+paragraph = file2.read()
+file2.close()
+
+########################################
+
+import urllib.request
+from bs4 import BeautifulSoup
+url = input('Enter URL of Webpage: ')
+print('\n')
+url_request = urllib.request.Request(url)
+url_response = urllib.request.urlopen(url)
+webpage_data = url_response.read()
+soup = BeautifulSoup(webpage_data, 'html.parser')
+
+######################################
+
+web_page_paragraph_contents = soup('p')
+web_page_data = ''
+for para in web_page_paragraph_contents:
+    web_page_data = web_page_data + str(para.text)
+
+############################################
+
+from nltk.tokenize import word_tokenize
+import re
+sentence_without_punctuations = re.sub(r'[^\w\s]', '', sentence)
+paragraph_without_punctuations = re.sub(r'[^\w\s]', '', paragraph)
+web_page_paragraphs_without_punctuations = re.sub(r'[^\w\s]', '', web_page_data)
+
+#####################################################
+
+sentence_after_tokenizing = word_tokenize(sentence_without_punctuations)
+paragraph_after_tokenizing = word_tokenize(paragraph_without_punctuations)
+webpage_after_tokenizing = word_tokenize(web_page_paragraphs_without_punctuations)
+###################################################################
+
+from nltk.corpus import stopwords
+nltk.download('stopwords')
+nltk_stop_words = stopwords.words('english')
+sentence_without_stopwords = [i for i in sentence_after_tokenizing if not i.lower() in nltk_stop_words]
+paragraph_without_stopwords = [j for j in paragraph_after_tokenizing if not j.lower() in nltk_stop_words]
+webpage_without_stopwords = [k for k in webpage_after_tokenizing if not k.lower() in nltk_stop_words]
+
+######################################################
+
+from nltk.stem.porter import PorterStemmer
+stemmer = PorterStemmer()
+sentence_after_stemming= []
+paragraph_after_stemming =[]
+webpage_after_stemming = []  #creating empty lists for storing stemmed words
+for word in sentence_without_stopwords:
+    sentence_after_stemming.append(stemmer.stem(word))
+for word in paragraph_without_stopwords:
+    paragraph_after_stemming.append(stemmer.stem(word))
+for word in webpage_without_stopwords:
+    webpage_after_stemming.append(stemmer.stem(word))
+##################################################
+
+from textblob import TextBlob
+final_words_sentence=[]
+final_words_paragraph=[]
+final_words_webpage=[]
+  
+for i in range(len(sentence_after_stemming)):
+    final_words_sentence.append(0)
+    present_word=sentence_after_stemming[i]
+    b=TextBlob(sentence_after_stemming[i])
+    if str(b.correct()).lower() in nltk_stop_words:
+        final_words_sentence[i]=present_word
+    else:
+        final_words_sentence[i]=str(b.correct())
+print(final_words_sentence)
+print('\n')
+  
+for i in range(len(paragraph_after_stemming)):
+    final_words_paragraph.append(0)
+    present_word = paragraph_after_stemming[i]
+    b = TextBlob(paragraph_after_stemming[i])
+    if str(b.correct()).lower() in nltk_stop_words:
+        final_words_paragraph[i] = present_word
+    else:
+        final_words_paragraph[i] = str(b.correct())
+  
+print(final_words_paragraph)
+print('\n')
+  
+for i in range(len(webpage_after_stemming)):
+    final_words_webpage.append(0)
+    present_word = webpage_after_stemming[i]
+    b = TextBlob(webpage_after_stemming[i])
+    if str(b.correct()).lower() in nltk_stop_words:
+        final_words_webpage[i] = present_word
+    else:
+        final_words_webpage[i] = str(b.correct())
+print(final_words_webpage)
+print('\n')
+
+###################################################
+
+from collections import Counter
+sentence_count = Counter(final_words_sentence)
+paragraph_count = Counter(final_words_paragraph)
+webpage_count = Counter(final_words_webpage)
+####################################
+
+import nltk
+s = input('Enter the file name which contains a sentence: ')
+file1 = open(s)
+sentence = file1.read()
+file1.close()
+p = input('Enter the file name which contains a paragraph: ')
+file2 = open(p)
+paragraph = file2.read()
+file2.close()
+  
+import urllib.request
+from bs4 import BeautifulSoup
+url = input('Enter URL of Webpage: ')
+print( '\n' )
+url_request = urllib.request.Request(url)
+url_response = urllib.request.urlopen(url)
+webpage_data = url_response.read()
+soup = BeautifulSoup(webpage_data, 'html.parser')
+  
+print('<------------------------------------------Initial Contents of Sentence are-------------------------------------------> \n')
+print(sentence)
+print( '\n' )
+  
+print('<------------------------------------------Initial Contents of Paragraph are-------------------------------------------> \n')
+print(paragraph)
+print( '\n' )
+  
+print('<------------------------------------------Initial Contents of Webpage are---------------------------------------------> \n')
+print(soup)
+print( '\n' )
+  
+  
+web_page_paragraph_contents=soup('p')
+web_page_data = ''
+for para in web_page_paragraph_contents:
+     web_page_data = web_page_data + str(para.text)
+  
+print('<------------------------------------------Contents enclosed between the paragraph tags in the web page are---------------------------------------------> \n')
+print(web_page_data)
+print('\n')
+  
+from nltk.tokenize import word_tokenize
+import re
+sentence_without_punctuations = re.sub(r'[^\w\s]', '', sentence)
+paragraph_without_punctuations = re.sub(r'[^\w\s]', '', paragraph)
+web_page_paragraphs_without_punctuations = re.sub(r'[^\w\s]', '', web_page_data)
+print('<------------------------------------------Contents of sentence after removing punctuations---------------------------------------------> \n')
+print(sentence_without_punctuations)
+print('\n')
+print('<------------------------------------------Contents of paragraph after removing punctuations---------------------------------------------> \n')
+print(paragraph_without_punctuations)
+print('\n')
+print('<------------------------------------------Contents of webpage after removing punctuations-----------------------------------------------> \n')
+print(web_page_paragraphs_without_punctuations)
+print('\n')
+  
+sentence_after_tokenizing = word_tokenize(sentence_without_punctuations)
+paragraph_after_tokenizing = word_tokenize(paragraph_without_punctuations)
+webpage_after_tokenizing = word_tokenize(web_page_paragraphs_without_punctuations)
+print('<------------------------------------------Contents of sentence after tokenizing----------------------------------------------> \n')
+print(sentence_after_tokenizing)
+print( '\n' )
+print('<------------------ ------------------------Contents of paragraph after tokenizing---------------------------------------------> \n')
+print(paragraph_after_tokenizing)
+print( '\n' )
+print('<------------------------------------------Contents of webpage after tokenizing-----------------------------------------------> \n')
+print(webpage_after_tokenizing)
+print( '\n' )
+  
+from nltk.corpus import stopwords
+nltk.download('stopwords')
+nltk_stop_words = stopwords.words('english')
+sentence_without_stopwords = [i for i in sentence_after_tokenizing if not i.lower() in nltk_stop_words]
+paragraph_without_stopwords = [j for j in paragraph_after_tokenizing if not j.lower() in nltk_stop_words]
+webpage_without_stopwords = [k for k in webpage_after_tokenizing if not k.lower() in nltk_stop_words]
+print('<------------------------------------------Contents of sentence after removing stopwords---------------------------------------------> \n')
+print(sentence_without_stopwords)
+print( '\n' )
+print('<------------------------------------------Contents of paragraph after removing stopwords---------------------------------------------> \n')
+print(paragraph_without_stopwords)
+print( '\n' )
+print('<------------------------------------------Contents of webpage after removing stopwords-----------------------------------------------> \n')
+print(webpage_without_stopwords)
+print( '\n' )
+  
+from nltk.stem.porter import PorterStemmer
+stemmer = PorterStemmer()
+sentence_after_stemming = []
+paragraph_after_stemming = []
+webpage_after_stemming = []  #creating empty lists for storing stemmed words
+for word in sentence_without_stopwords:
+    sentence_after_stemming.append(stemmer.stem(word))
+for word in paragraph_without_stopwords:
+    paragraph_after_stemming.append(stemmer.stem(word))
+for word in webpage_without_stopwords:
+    webpage_after_stemming.append(stemmer.stem(word))
+print('<------------------------------------------Contents of sentence after doing stemming---------------------------------------------> \n')
+print(sentence_after_stemming)
+print( '\n' )
+print('<------------------------------------------Contents of paragraph after doing stemming---------------------------------------------> \n')
+print(paragraph_after_stemming)
+print( '\n' )
+print('<------------------------------------------Contents of webpage after doing stemming-----------------------------------------------> \n')
+print(webpage_after_stemming)
+print( '\n' )
+  
+  
+from textblob import TextBlob
+final_words_sentence=[]
+final_words_paragraph=[]
+final_words_webpage=[]
+  
+for i in range(len(sentence_after_stemming)):
+    final_words_sentence.append(0)
+    present_word=sentence_after_stemming[i]
+    b=TextBlob(sentence_after_stemming[i])
+    if str(b.correct()).lower() in nltk_stop_words:
+        final_words_sentence[i]=present_word
+    else:
+        final_words_sentence[i]=str(b.correct())
+print('<------------------------------------------Contents of sentence after correcting mispelled words-----------------------------------------------> \n')
+print(final_words_sentence)
+print('\n')
+  
+for i in range(len(paragraph_after_stemming)):
+    final_words_paragraph.append(0)
+    present_word = paragraph_after_stemming[i]
+    b = TextBlob(paragraph_after_stemming[i])
+    if str(b.correct()).lower() in nltk_stop_words:
+        final_words_paragraph[i] = present_word
+    else:
+        final_words_paragraph[i] = str(b.correct())
+print('<------------------------------------------Contents of paragraph after correcting mispelled words-----------------------------------------------> \n')
+print(final_words_paragraph)
+print('\n')
+  
+for i in range(len(webpage_after_stemming)):
+    final_words_webpage.append(0)
+    present_word = webpage_after_stemming[i]
+    b = TextBlob(webpage_after_stemming[i])
+    if str(b.correct()).lower() in nltk_stop_words:
+        final_words_webpage[i] = present_word
+    else:
+        final_words_webpage[i] = str(b.correct())
+print('<------------------------------------------Contents of webpage after correcting mispelled words-----------------------------------------------> \n')
+print(final_words_webpage)
+print('\n')
+  
+from collections import Counter
+sentence_count = Counter(final_words_sentence)
+paragraph_count = Counter(final_words_paragraph)
+webpage_count = Counter(final_words_webpage)
+print('<------------------------------------------Frequency of words in sentence ---------------------------------------------> \n')
+print(sentence_count)
+print( '\n' )
+print('<------------------------------------------Frequency of words in paragraph ---------------------------------------------> \n')
+print(paragraph_count)
+print( '\n' )
+print('<------------------------------------------Frequency of words in webpage -----------------------------------------------> \n')
+print(webpage_count)
+
+
+/* Use the iris dataset. Write a Python program to view some basic statistical details like
+percentile, mean, std etc. of the species of 'Iris-setosa', 'Iris-versicolor' and 'Iris-virginica'. Apply
+logistic regression on the dataset to identify different species (setosa, versicolor, verginica) of Iris
+flowers given just 4 features: sepal and petal lengths and widths.. Find the accuracy of the model. */ 
+
+import pandas as pd
+data = pd.read_csv("iris.csv")
+print('Iris-setosa')
+setosa = data['Species'] == 'Iris-setosa'
+print(data[setosa].describe())
+print('\nIris-versicolor')
+setosa = data['Species'] == 'Iris-versicolor'
+print(data[setosa].describe())
+print('\nIris-virginica')
+setosa = data['Species'] == 'Iris-virginica'
+print(data[setosa].describe())
+*********************OUTPUT***********************
+Iris-setosa
+Id,SepalLengthCm,SepalWidthCm,PetalLengthCm,PetalWidthCm
+count,50.00000,50.00000,50.000000,50.000000,50.00000
+mean,25.50000,5.00600,3.418000,1.464000,0.24400
+std,14.57738,0.35249,0.381024,0.173511,0.10721
+min,1.00000,4.30000,2.300000,1.000000,0.10000
+25%,13.25000,4.80000,3.125000,1.400000,0.20000
+50%,25.50000,5.00000,3.400000,1.500000,0.20000
+75%,37.75000,5.20000,3.675000,1.575000,0.30000
+max,50.00000,5.80000,4.400000,1.900000,0.60000
+
+Iris-versicolor
+Id,SepalLengthCm,SepalWidthCm,PetalLengthCm,PetalWidthCm
+count,50.00000,50.000000,50.000000,50.000000,50.000000
+mean,75.50000,5.936000,2.770000,4.260000,1.326000
+std,14.577380,516171,0.313798,0.469911,0.197753
+min,51.00000,4.900000,2.000000,3.000000,1.000000
+25%,63.25000,5.600000,2.525000,4.000000,1.200000
+50%,75.50000,5.900000,2.800000,4.350000,1.300000
+75%,87.75000,6.300000,3.000000,4.600000,1.500000
+max,100.00000,7.000000,3.400000,5.100000,1.800000
+
+Iris-virginica
+Id,SepalLengthCm,SepalWidthCm,PetalLengthCm,PetalWidthCm
+count,50.00000,50.00000,50.000000,50.000000,50.00000
+mean,125.50000,6.58800,2.974000,5.552000,2.02600
+std,14.57738,0.63588,0.322497,0.551895,0.27465
+min,101.00000,4.90000,2.200000,4.500000,1.40000
+25%,113.25000,6.22500,2.800000,5.100000,1.80000
+50%,125.50000,6.50000,3.000000,5.550000,2.00000
+75%,137.75000,6.90000,3.175000,5.875000,2.30000
+max,150.00000,7.90000,3.800000,6.900000,2.50000
+ 
+
+/* To insert text before and after an image using jQuery.
+[Hint:Usebefore()andAfter()] */
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Inserting Multiple Elements Before or After the Elements in jQuery</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        var newHeading = "<h2>Important Note:</h2>";
+        var newParagraph = document.createElement("p");
+        newParagraph.innerHTML = "<em>Lorem Ipsum is dummy text...</em>";
+        var newImage = $('<img src="/examples/images/smiley.png" alt="Symbol">');
+        $("p").before(newHeading, newParagraph, newImage);
+    });
+    
+});
+</script>
+</head>
+<body>
+    <button type="button">Insert Contents</button>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante, metus ac nisl bibendum.</p>
+</body>
+</html>
+******************* OUTPUT****************************8
+Lorem Ipsum is dummy text...
+Symbol
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante, metus ac nisl bibendum.
+
+
+/* Perform text analytics on WhatsApp data */ 
+
+
+
+import re
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from datetime import *
+import datetime as dt
+from matplotlib.ticker import MaxNLocator
+import regex
+import emoji
+from seaborn import *
+from heatmap import heatmap
+from wordcloud import WordCloud , STOPWORDS , ImageColorGenerator
+from nltk import *
+from plotly import express as px
+
+###################################################
+
+  ### Python code to extract Date from chat file 
+  
+#####################################################  
+
+  ### Regex pattern to extract username of Author.
+ 
+@@@@@@@@@@@@@@@@@@
+
+def FindAuthor(s):
+    patterns = [
+        '([w]+):',                        # First Name
+        '([w]+[s]+[w]+):',              # First Name + Last Name
+        '([w]+[s]+[w]+[s]+[w]+):',    # First Name + Middle Name + Last Name
+        '([+]d{2} d{5} d{5}):',         # Mobile Number (India no.)
+        '([+]d{2} d{3} d{3} d{4}):',   # Mobile Number (US no.)
+        '([w]+)[u263a-U0001f999]+:',    # Name and Emoji              
+    ]
+    pattern = '^' + '|'.join(patterns)
+    result = re.match(pattern, s)
+    if result:
+        return True
+    return False
+    
+  @@@@@@@@@@@@@@@@@@@@@@
+  def getDataPoint(line):   
+    splitLine = line.split(' - ') 
+    dateTime = splitLine[0]
+    date, time = dateTime.split(', ') 
+    message = ' '.join(splitLine[1:])
+    if FindAuthor(message): 
+        splitMessage = message.split(': ') 
+        author = splitMessage[0] 
+        message = ' '.join(splitMessage[1:])
+    else:
+        author = None
+    return date, time, author, message
+
+### Finally creating a dataframe and storing all data inside that dataframe.
+
+################################################  
+    
+parsedData = [] # List to keep track of data so it can be used by a Pandas dataframe
+### Uploading exported chat file
+conversationPath = 'WhatsApp Chat with TE Comp 20-21 Official.txt' # chat file
+with open(conversationPath, encoding="utf-8") as fp:
+    ### Skipping first line of the file because contains information related to something about end-to-end encryption
+    fp.readline() 
+    messageBuffer = [] 
+    date, time, author = None, None, None
+    while True:
+        line = fp.readline() 
+        if not line: 
+            break
+        line = line.strip() 
+        if startsWithDateAndTime(line): 
+            if len(messageBuffer) > 0: 
+                parsedData.append([date, time, author, ' '.join(messageBuffer)]) 
+            messageBuffer.clear() 
+            date, time, author, message = getDataPoint(line) 
+            messageBuffer.append(message) 
+        else:
+            messageBuffer.append(line)
+df = pd.DataFrame(parsedData, columns=['Date', 'Time', 'Author', 'Message']) # Initialising a pandas Dataframe.
+### changing datatype of "Date" column.
+df["Date"] = pd.to_datetime(df["Date"])
+
+####################################################
+
+### Ch### Mostly Active month 
+plt.figure(figsize=(12,6))
+active_month = df['Month_Year'].value_counts()
+a_m = active_month
+a_m.plot.bar()
+plt.xlabel('Month',fontdict={'fontsize': 14,'fontweight': 10})
+plt.ylabel('No. of messages',fontdict={'fontsize': 14,'fontweight': 10})
+plt.title('Analysis of mostly active month.',fontdict={'fontsize': 20,
+        'fontweight': 8})
+plt.show()ecking shape of dataset.
+df.shape
+### Checking basic information of dataset
+df.info()
+### Checking no. of null values in dataset
+df.isnull().sum()
+### Checking head part of dataset
+df.head(50)
+### Checking tail part of dataset
+df.tail(50)
+### Droping Nan values from dataset
+df = df.dropna()
+df = df.reset_index(drop=True)
+df.shape
+### Checking no. of authors of group
+df['Author'].nunique()
+### Checking authors of group
+df['Author'].unique()
+
+###########################
+
+### Adding one more column of "Day" for better analysis, here we use datetime library which help us to do this task easily.
+weeks = {
+0 : 'Monday',
+1 : 'Tuesday',
+2 : 'Wednesday',
+3 : 'Thrusday',
+4 : 'Friday',
+5 : 'Saturday',
+6 : 'Sunday'
+}
+df['Day'] = df['Date'].dt.weekday.map(weeks)
+### Rearranging the columns for better understanding
+df = df[['Date','Day','Time','Author','Message']]
+### Changing the datatype of column "Day".
+df['Day'] = df['Day'].astype('category')
+### Looking newborn dataset.
+df.head()
+### Counting number of letters in each message
+df['Letter's'] = df['Message'].apply(lambda s : len(s))
+### Counting number of word's in each message
+df['Wo### Mostly Active month 
+plt.figure(figsize=(12,6))
+active_month = df['Month_Year'].value_counts()
+a_m = active_month
+a_m.plot.bar()
+plt.xlabel('Month',fontdict={'fontsize': 14,'fontweight': 10})
+plt.ylabel('No. of messages',fontdict={'fontsize': 14,'fontweight': 10})
+plt.title('Analysis of mostly active month.',fontdict={'fontsize': 20,
+        'fontweight': 8})
+plt.show()rd's'] = df['Message'].apply(lambda s : len(s.split(' ')))
+### Function to count number of links in dataset, it will add extra column and store information in it.
+URLPATTERN = r'(https?://S+)'
+df['Url_Count'] = df.Message.apply(lambda x: re.findall(URLPATTERN, x)).str.len()
+links = np.sum(df.Url_Count)
+### Function to count number of media in chat.
+MEDIAPATTERN = r'<Media omitted>'
+df['Media_Count'] = df.Message.apply(lambda x : re.findall(MEDIAPATTERN, x)).str.len()
+media = np.sum(df.Media_Count)
+### Looking updated dataset
+df
+
+#######################################
+
+total_messages = df.shape[0]
+media_messages = df[df['Message'] == '<Media omitted>'].shape[0]
+links = np.sum(df.Url_Count)
+print('Group Chatting Stats : ')
+print('Total Number of Messages : {}'.format(total_messages))
+print('Total Number of Media Messages : {}'.format(media_messages))
+print('Total Number of Links : {}'.format(links))
+
+##########################################################
+
+l = df.Author.unique()
+for i in range(len(l)):
+  ### Filtering out messages of particular user
+  req_df = df[df["Author"] == l[i]]
+  ### req_df will contain messages of only one particular user
+  print(f'--> Stats of {l[i]} <-- ')
+  ### shape will print number of rows which indirectly means the number of messages
+  print('Total Message Sent : ', req_df.shape[0])
+  ### Word_Count contains of total words in one message. Sum of all words/ Total Messages will yield words per message
+  words_per_message = (np.sum(req_df['Word's']))/req_df.shape[0]
+  w_p_m = ("%.3f" % round(words_per_message, 2))  
+  print('Average Words per Message : ', w_p_m)
+  ### media conists of media messages
+  media = sum(req_df["Media_Count"])
+  print('Total Media Message Sent : ', media)
+  ### links consist of total links
+  links = sum(req_df["Url_Count"])   
+  print('Total Links Sent : ', links)   
+  print()
+  print('----------------------------------------------------------n')
+  
+#######################################################
+
+### Word Cloud of mostly used word in our Group
+text = " ".join(review for review in df.Message)
+wordcloud = WordCloud(stopwords=STOPWORDS, background_color="white").generate(text)
+  ### Display the generated image:
+plt.figure( figsize=(10,5))
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+plt.show()
+
+#################################
+
+### Creates a list of unique Authors
+l = df.Author.unique()
+for i in range(len(l)):
+  ### Filtering out messages of particular user
+  req_df = df[df["Author"] == l[i]]
+  ### req_df will contain messages of only one particular user
+  print(l[i],'  ->  ',req_df.shape[0])
+  
+  
+  #############################################
+  
+  l = df.Day.unique()
+for i in range(len(l)):
+  ### Filtering out messages of particular user
+  req_df = df[df["Day"] == l[i]]
+  ### req_df will contain messages of only one particular user
+  print(l[i],'  ->  ',req_df.shape[0])
+  
+  ###############################################################
+  
+  ### Mostly Active Author in the Group
+plt.figure(figsize=(9,6))
+mostly_active = df['Author'].value_counts()
+### Top 10 peoples that are mostly active in our Group is : 
+m_a = mostly_active.head(10)
+bars = ['A','B','C','D','E','F','G','H','I','J']
+x_pos = np.arange(len(bars))
+m_a.plot.bar()
+plt.xlabel('Authors',fontdict={'fontsize': 14,'fontweight': 10})
+plt.ylabel('No. of messages',fontdict={'fontsize': 14,'fontweight': 10})
+plt.title('Mostly active member of Group',fontdict={'fontsize': 20,'fontweight': 8})
+plt.xticks(x_pos, bars)
+plt.show()
+
+######### Mostly Active month 
+plt.figure(figsize=(12,6))
+active_month = df['Month_Year'].value_counts()
+a_m = active_month
+a_m.plot.bar()
+plt.xlabel('Month',fontdict={'fontsize': 14,'fontweight': 10})
+plt.ylabel('No. of messages',fontdict={'fontsize': 14,'fontweight': 10})
+plt.title('Analysis of mostly active month.',fontdict={'fontsize': 20,
+        'fontweight': 8})
+plt.show()##################################
+
+### Mostly Active day in the Group
+plt.figure(figsize=(8,5))
+active_day = df['Day'].value_counts()
+### Top 10 peoples that are mostly active in our Group is : 
+a_d = active_day.head(10)
+a_d.plot.bar()
+plt.xlabel('Day',fontdict={'fontsize': 12,'fontweight': 10})
+plt.ylabel('No. of messages',fontdict={'fontsize': 12,'fontweight': 10})
+plt.title('Mostly active day of Week in the Group',fontdict={'fontsize': 18,'fontweight': 8})
+plt.show()
+
+#######################################################
+
+### Top-10 Media Contributor of Group
+mm = df[df['Message'] == '<Media omitted>']
+mm1 = mm['Author'].value_counts()
+bars = ['A','B','C','D','E','F','G','H','I','J']
+x_pos = np.arange(len(bars))
+top10 = mm1.head(10)
+top10.plot.bar()
+plt.xlabel('Author's',fontdict={'fontsize': 12,'fontweight': 10})
+plt.ylabel('No. of media',fontdict={'fontsize': 12,'fontweight': 10})
+plt.title('Top-10 media contributor of Group',fontdict={'fontsize': 18,'fontweight': 8})
+plt.xticks(x_pos, bars)
+
+#################################################################
+
+max_words = df[['Author','Word's']].groupby('Author').sum()
+m_w = max_words.sort_values('Word's',ascending=False).head(10)
+bars = ['A','B','C','D','E','F','G','H','I','J']
+x_pos = np.arange(len(bars))
+m_w.plot.bar(rot=90)
+plt.xlabel('Author')
+plt.ylabel('No. of words')
+plt.title('Analysis of members who has used max. no. of words in his/her messages')
+plt.xticks(x_pos, bars)
+plt.show()
+
+####################################################
+
+### Member who has shared max numbers of link in Group 
+max_words = df[['Author','Url_Count']].groupby('Author').sum()
+m_w = max_words.sort_values('Url_Count',ascending=False).head(10)
+bars = ['A','B','C','D','E','F','G','H','I','J']
+x_pos = np.arange(len(bars))
+m_w.plot.bar(rot=90)
+plt.xlabel('Author')
+plt.ylabel('No. of link's')
+plt.title('Analysis of member's who has shared max no. of link's in Group')
+plt.xticks(x_pos, bars)
+plt.show()
+
+###########################################################
+
+### Time whenever our group is highly active
+plt.figure(figsize=(8,5))
+t = df['Time'].value_counts().head(20)
+tx = t.plot.bar()
+tx.yaxis.set_major_locator(MaxNLocator(integer=True))  #Converting y axis data to integer
+plt.xlabel('Time',fontdict={'fontsize': 12,'fontweight': 10})
+plt.ylabel('No. of messages',fontdict={'fontsize': 12,'fontweight': 10})
+plt.title('Analysis of time when Group was highly active.',fontdict={'fontsize': 18,'fontweight': 8})
+plt.show()
+
+#################################################################
+
+lst = []
+for i in df['Time'] :
+out_time = datetime.strftime(datetime.strptime(i,"%I:%M %p"),"%H:%M")
+lst.append(out_time)
+df['24H_Time'] = lst
+df['Hours'] = df['24H_Time'].apply(lambda x : x.split(':')[0])
+
+###################################################################
+
+lst = []
+for i in df['Time'] :
+out_time = datetime.strftime(datetime.strptime(i,"%I:%M %p"),"%H:%M")
+lst.append(out_time)
+df['24H_Time'] = lst
+df['Hours'] = df['24H_Time'].apply(lambda x : x.split(':')[0])
+
+##########################################################
+
+active_m = [list of Top-10 highly active members]
+for i in range(len(active_m)) :
+    # Filtering out messages of particular user
+    m_chat = df[df["Author"] == active_m[i]]
+    print(f'--- Author :  {active_m[i]} --- ')
+    # Word Cloud of mostly used word in our Group
+    msg = ' '.join(x for x in m_chat.Message)
+    wordcloud = WordCloud(stopwords=STOPWORDS, background_color="white").generate(msg)
+    plt.figure(figsize=(10,5))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis("off")
+    plt.show()
+    print('____________________________________________________________________________________n')
+    
+    
+####################################################
+
+### Date on which our Group was highly active.
+plt.figure(figsize=(8,5))
+df['Date'].value_counts().head(15).plot.bar()
+plt.xlabel('Date',fontdict={'fontsize': 14,'fontweight': 10})
+plt.ylabel('No. of messages',fontdict={'fontsize': 14,'fontweight': 10})
+plt.title('Analysis of Date on which Group was highly active',fontdict={'fontsize': 18,'fontweight': 8})
+plt.show()
+
+#################################################################
+
+z = df['Date'].value_counts() 
+z1 = z.to_dict() #converts to dictionary
+df['Msg_count'] = df['Date'].map(z1)
+### Timeseries plot 
+fig = px.line(x=df['Date'],y=df['Msg_count'])
+fig.update_layout(title='Analysis of number of message's using TimeSeries plot.',
+                  xaxis_title='Month',
+                  yaxis_title='No. of Messages')
+fig.update_xaxes(nticks=20)
+fig.show()
+
+######################################################################
+
+df['Year'] = df['Date'].dt.year
+df['Mon'] = df['Date'].dt.month
+months = {
+     1 : 'Jan',
+     2 : 'Feb',
+     3 : 'Mar',
+     4 : 'Apr',
+     5 : 'May',
+     6 : 'Jun',
+     7 : 'Jul',
+     8 : 'Aug',
+     9 : 'Sep',
+    10 : 'Oct',
+    11 : 'Nov',
+    12 : 'Dec'
+}
+df['Month'] = df['Mon'].map(months)
+df.drop('Mon',axis=1,inplace=True)
+
+#######################################################################
+
+### Mostly Active month 
+plt.figure(figsize=(12,6))
+active_month = df['Month_Year'].value_counts()
+a_m = active_month
+a_m.plot.bar()
+plt.xlabel('Month',fontdict={'fontsize': 14,'fontweight': 10})
+plt.ylabel('No. of messages',fontdict={'fontsize': 14,'fontweight': 10})
+plt.title('Analysis of mostly active month.',fontdict={'fontsize': 20,
+        'fontweight': 8})
+plt.show()
+
+############################################
+
+z = df['Month_Year'].value_counts() 
+z1 = z.to_dict() #converts to dictionary
+df['Msg_count_monthly'] = df['Month_Year'].map(z1)
+plt.figure(figsize=(18,9))
+sns.set_style("darkgrid")
+sns.lineplot(data=df,x='Month_Year',y='Msg_count_monthly',markers=True,marker='o')
+plt.xlabel('Month',fontdict={'fontsize': 14,'fontweight': 10})
+plt.ylabel('No. of messages',fontdict={'fontsize': 14,'fontweight': 10})
+plt.title('Analysis of mostly active month using line plot.',fontdict={'fontsize': 20,'fontweight': 8})
+plt.show()
+
+####################################
+
+### Total message per year
+### As we analyse that the group was created in mid 2019, thats why number of messages in 2019 is less.
+plt.figure(figsize=(12,6))
+active_month = df['Year'].value_counts()
+a_m = active_month
+a_m.plot.bar()
+plt.xlabel('Year',fontdict={'fontsize': 14,'fontweight': 10})
+plt.ylabel('No. of messages',fontdict={'fontsize': 14,'fontweight': 10})
+plt.title('Analysis of mostly active year.',fontdict={'fontsize': 20,'fontweight': 8})
+plt.show()
+
+###############################################
+
+df2 = df.groupby(['Hours', 'Day'], as_index=False)["Message"].count()
+df2 = df2.dropna()
+df2.reset_index(drop = True,inplace = True)
+### Analysing on which time group is mostly active based on hours and day.
+analysis_2_df = df.groupby(['Hours', 'Day'], as_index=False)["Message"].count()
+### Droping null values
+analysis_2_df.dropna(inplace=True)
+analysis_2_df.sort_values(by=['Message'],ascending=False)
+day_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thrusday', 'Friday', 'Saturday', 'Sunday']
+plt.figure(figsize=(15,8))
+heatmap(
+    x=analysis_2_df['Hours'],
+    y=analysis_2_df['Day'],
+    size_scale = 500,
+    size = analysis_2_df['Message'], 
+    y_order = day_of_week[::-1],
+    color = analysis_2_df['Message'], 
+    palette = sns.cubehelix_palette(128)
+)
+plt.show()
+
+
+
+
+/* Download the Market basket dataset. Write a python program to read the dataset and
+display its information. Preprocess the data (drop null values etc.) Convert the categorical values
+into numeric format. Apply the apriori algorithm on the above dataset to generate the frequent
+itemsets and association rules. */ 
+
+# Importing the libraries
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from apyori import apriori
+# Data Preprocessing
+dataset = pd.read_csv('Market_Basket_Optimisation.csv', header = None)
+#Getting the list of transactions from the dataset
+transactions = []
+for i in range(0, 7501):
+    transactions.append([str(dataset.values[i,j]) for j in range(0, 20)])
+    # Training Apriori algorithm on the dataset
+rule_list = apriori(transactions, min_support = 0.003, min_confidence = 0.3, min_lift = 3, min_length = 2)
+# Visualizing the list of rules
+results = list(rule_list)
+for i in results:
+    print('\n')
+    print(i)
+    print('**********') 
+    
+    
+    
+    
+    *******************************output************************
+    
+    Relation record(items=frozenset({'mushroom cream sauce','escalope'}), support=0.005732568990801226,
+    ordered_statistics=(items_base=frozenset({'mushroom cream sauce'),
+    items_add=frozenset({'escalope'}), confidence=0.3006993006993007,lift=3.790832696715049)])
+
+
+
+
+*/ Write AJAX program to read contact.dat file and print the contents of the file in a tabular
+format when the user clicks on print button. Contact.dat file should contain srno, name,
+residence number, mobile number, Address. [Enter at least 3 record in contact.dat file] */ 
+
+
+<html>
+<head>
+<style>
+span
+{
+                font-size: 25px;
+}
+table
+{
+                color: blueviolet; ;
+}
+</style>
+
+<script type="text/javascript" >
+                function print()
+                {
+                                var ob=false;
+                                ob=new XMLHttpRequest();
+             
+                                ob.open("GET","contact.php?");//emailid="+eid);
+                                ob.send();         
+             
+                                ob.onreadystatechange=function()
+                                {
+                                                if(ob.readyState==4 && ob.status==200)
+                                                {
+                                                                document.getElementById("i").innerHTML=ob.responseText;
+                                                }
+                                }
+                }           
+</script>
+</head>
+
+<body>
+<center>
+<h3>Display the contents of a contact.dat file </h3>
+<br><input  type="button"  value=Print onclick="print()" >
+<span id="i"></span>
+</center>
+
+#########################contact.dat##############################
+1  Isha  65768798  98765432  Daughter
+2  Megha  65235689  87654329  Mother
+
+
+####################*PHP*################
+
+<?php
+                $fp = fopen('contact.dat','r');
+                echo "<table border=1>";
+                echo "<tr><th>Sr. No.</th><th>Name</th><th>Residence No.</th><th>Mob. no.</th><th>Relation</th></tr>";
+             
+while($row =  fscanf($fp,"%s %s %s %s %s"))
+                {
+                                echo "<tr>";
+                                foreach($row as $r)
+                                {
+                                                echo "<td>$r</td>";                           
+                                }                           
+                                echo "</tr>";
+                }
+                                echo "</table>";
+                fclose($fp);
+?
+
+*******************************OUTPUT**********************************
+
+Display the contents of a contact.dat file
+ 
+            print
+
+/*Write a Python script to read the Tweets using Twitter API and tweepy library to perform the
+following tasks :
+i. Authenticate Twitter API (Using Bearer Token) */ 
+
+
+ import tweepy
+
+client = tweepy.Client("Bearer Token here")
+
+
+
+/* Write a python code to implement the apriori algorithm. Test the code on any standard dataset. */
+
+import numpy as np
+import pandas as pd
+from mlxtend.frequent_patterns import apriori, association_rules
+
+
+cd C:\Users\Dev\Desktop\Kaggle\Apriori Algorithm
+
+
+data = pd.read_excel('Online_Retail.xlsx')
+data.head()
+***************OUTPUT**********************
+INVOICENO,STOCKCODE,DESCRIPTION QUANTITY,invoicedate,unitprice,customerid,country
+0,645676,white hanging heart tught holder,6,2010-12-01 8:26:00,255,178500,united kingdom
+1,645672,white hanging heart tught holder,2,2011-12-01 8:26:00,253,178500,united kingdom
+2,645671,white hanging heart tught holder,1,2012-12-01 8:26:00,252,178500,united kingdom
+3,645674,white hanging heart tught holder,3,2010-12-01 8:26:00,254,178500,united kingdom
+4,645673,white hanging heart tught holder,4,2012-12-01 8:26:00,251,178500,united kingdom
+
+
+/* Write Ajax program to get book details from XML file when user select a book name.
+Create XML file for storing details of book(title, author, year, price). */
+
+<html>
+<body>
+<script type="text/javascript">
+function show_confirm()
+{
+var r=confirm("Press a button !");
+if(r==true)
+{
+ver i;
+var mybooks = new Array();
+mybooks[0]="Mysql";
+mybooks[1]="PHP";
+mybooks[2]="Java";
+for(i=0;i {
+document.write(mybookks[i]+"
+");
+}
+}
+else
+{
+
+alert("Cancel books cannot br displayed !");
+}
+}
+</script>
+</head>
+<body>
+<input type="button" onclick="show_confirm()" value="List of Books"/>
+</body>
+</html>
+&&&&&&&&&&&&&&&
+<?xml version='1.0' encoding='utf-8'?>
+//use to double qoute for display version "1.0" and "utf-8".don't use singlr qoute.
+<ABCBOOLK>
+<Book>
+<Book_Title>Networking</Book_Title>
+<Book_Author>400</Book_Author>
+<Book_PubYear>2015</Book_PubYear>
+<Book_Price>450</Book_Price>
+</Book>
+<Book>
+<Book_Title>php </Book_Title>
+<Book_Author>400</Book_Author>
+<Book_PubYear>2015</Book_PubYear>
+<Book_Price>450</Book_Price>
+</Book>
+<Book>
+<Book_Title>java</Book_Title>
+<Book_Author>400</Book_Author>
+<Book_PubYear>2015</Book_PubYear>
+<Book_Price>450</Book_Price>
+</Book>
+</ABCBOOLK> 
+**************************OUTPUT********************************
+list of books
+
+
+/* Create ‘realestate’ Data set having 4 columns namely: ID,flat, houses and purchases (random 500
+entries). Build a linear regression model by identifying independent and target variable. Split the variables
+into training and testing sets and print them. Build a simple linear regression model for predicting
+purchases. */ 
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import mpl_toolkits
+%matplotlib inline
+
+import pandas as pd
+df = pd.read_csv("kc_house_data.csv")
+
+import pandas as pd
+df.head()
+
+*****************OUTPUT*********************
+id 	flat 	houses 	perchased
+0 	23415 	2 	3 	0
+1 	98767 	4 	5 	0
+2 	90892 	2 	1 	0
+3 	98908 	1 	1 	0
+4 	75634 	9 	3 	0
+
+
+/* Create the following dataset in python
+Convert the categorical values into numeric format. Apply the apriori algorithm on the above
+dataset to generate the frequent itemsets and association rules. Repeat the process with different min_sup
+values. 2. Create your own transactions dataset and apply the above process on your dataset. */ 
+
+
+
+import pandas as pd
+from mlxtend.frequent_patterns import apriori, association_rules
+
+Create the sample dataset
+transactions = [['eggs', 'milk','bread'],
+['eggs', 'apple'],
+['milk', 'bread'],
+['apple', 'milk'],
+['milk', 'apple', 'bread']]
+
+from mlxtend.preprocessing import TransactionEncoder
+te=TransactionEncoder()
+te_array=te.fit(transactions).transform(transactions)
+df=pd.DataFrame(te_array, columns=te.columns_)
+df
+
+**********************OUTPUT***********
+apple bread Eggs milk
+0 False True True True
+1 True False True False
+2 False True False True
+3 True False False True
+4 True True False True
+
+
+/* Create a table student having attributes (rollno, name, class). Assume appropriate data types for the
+attributes. Using Codeigniter , connect to the database and insert minimum 5 records in it. */ 
+
+<html>
+<head>
+<style>
+div {
+	align:center;
+	width:400px;
+	height:300px;
+border: solid black;
+background-color:orange;
+ 
+padding: 20px;
+}
+ 
+</style>
+</head>
+<body>
+<div>
+<h1>Enter data for Student</h1>
+<form  method="post">
+Name:<br />
+<input type="text" name="name"/><br />
+Roll number:<br />
+<input type="text" name="rno"/>
+<br><br>
+class:<br />
+<input type="text" name="class"/>
+<br><br>
+<input type="submit" name="OK" />
+</form>
+<?php  
+$con=mysqli_connect("localhost","root","","student");
+if(isset($_POST['OK'])){
+$p =$_POST['name'];
+$f =$_POST['rno'];
+$d =$_POST['class'];   
+$sql=mysqli_query($con,"INSERT INTO students (name,rno,class) VALUES ('$p','$f','$d')");
+}
+?> 
+</div>
+</body>
+ 
+</html>
+*************************OUTPUT************************
+Enter data for Student
+Name:
+
+Roll number:
+
+
+class:
+
+
+/* Create ‘User’ Data set having 5 columns namely: User ID, Gender, Age, EstimatedSalary and
+Purchased. Build a logistic regression model that can predict whether on the given parameter a person
+will buy a car or not. */ 
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+
+import pandas as pd
+df=pd.read_csv('suv_data.csv')
+df.head()
+
+***************OUTPUT*****************
+user id 	gender 	age 	estimated salary 	purchased
+0 	15624510 	male 	19 	19000 	                  0
+1 	15810944 	male 	35 	20000 	                  0
+2 	15668575 	female 26 	43000 	                  0
+3 	15603246 	female 27 	57000 	                  0
+4 	15804002 	male 	19 	76000 	                  0
+
+
+/* Create ‘User’ Data set having 5 columns namely: User ID, Gender, Age, EstimatedSalary and
+Purchased. Build a logistic regression model that can predict whether on the given parameter a person
+will buy a car or not. */ 
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+
+import pandas as pd
+df=pd.read_csv('suv_data.csv')
+df.head()
+
+***************OUTPUT*****************
+user id 	gender 	age 	estimated salary 	purchased
+0 	15624510 	male 	19 	19000 	                  0
+1 	15810944 	male 	35 	20000 	                  0
+2 	15668575 	female 26 	43000 	                  0
+3 	15603246 	female 27 	57000 	                  0
+4 	15804002 	male 	19 	76000 	                  0
